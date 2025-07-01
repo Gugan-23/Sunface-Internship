@@ -1,0 +1,259 @@
+/* Base Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: #000;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Header Styling */
+.header {
+  background-color: #0b1c47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.header .logo {
+  height: 40px;
+}
+
+.header .menu-icon {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Container Layout */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Info Box */
+.info-box {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card {
+  margin-bottom: 25px;
+}
+
+.info-card i {
+  font-size: 20px;
+  color: #007BFF;
+  margin-right: 10px;
+}
+
+.info-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+.info-card p,
+.info-card a {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+/* Form Box */
+.form-box {
+  flex: 2;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-box form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-box input,
+.form-box textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f6f7fb;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-box textarea {
+  grid-column: span 2;
+  resize: vertical;
+  height: 100px;
+}
+
+.form-box button {
+  grid-column: span 2;
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-box button:hover {
+  background: #555;
+}
+
+/* Google Map */
+iframe {
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Chat Options */
+.chat-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.chat-box {
+  background: rgba(244, 246, 252, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.chat-box i {
+  font-size: 32px;
+  color: #007BFF;
+}
+
+.chat-box h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.chat-box a {
+  color: #007BFF;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .form-box form {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .form-box form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-box textarea,
+  .form-box button {
+    grid-column: span 1;
+  }
+
+  .header {
+    padding: 10px 16px;
+  }
+
+  .header .logo {
+    height: 36px;
+  }
+
+  .header .menu-icon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .form-box,
+  .info-box,
+  .chat-box {
+    padding: 20px;
+  }
+
+  .form-box h2,
+  .chat-box h3 {
+    font-size: 18px;
+  }
+
+  .chat-box {
+    width: 100%;
+  }
+
+  .form-box input,
+  .form-box textarea,
+  .form-box button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .chat-options {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  iframe {
+    height: 300px;
+  }
+}
